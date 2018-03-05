@@ -4,15 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.debm.myapplication.MainActivity">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="Username"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    tools:ignore="HardcodedText" />
+
+
+
+
+            <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:singleLine="true"
+                    android:inputType="textPassword"
+                    tools:ignore="HardcodedText" />
+
+
+                <EditText
+                    android:id="@+id/etFullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="Fullname"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    />
+
+                <EditText
+                    android:id="@+id/etCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="City"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/etStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="Status"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    tools:ignore="HardcodedText" />
+
+
+            <Button
+                android:id="@+id/bSubmit"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"
+                android:text="Submit"
+                android:backgroundTint="@color/colorPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
