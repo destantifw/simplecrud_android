@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.debm.myapplication.EditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+    <EditText
+        android:id="@+id/etUsername1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        android:singleLine="true"
+        tools:ignore="HardcodedText" />
+
+
+    <EditText
+        android:id="@+id/etFullname1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:hint="Fullname"
+        android:inputType="text"
+        android:singleLine="true"
+        />
+
+    <EditText
+        android:id="@+id/etCity1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:hint="City"
+        android:inputType="text"
+        android:singleLine="true"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/etStatus1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:hint="Status"
+        android:inputType="text"
+        android:singleLine="true"
+        tools:ignore="HardcodedText" />
+
+
+    <Button
+        android:id="@+id/bEdit1"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:text="Edit"
+        android:backgroundTint="@color/colorPrimary"
+        android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -13,6 +13,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -90,21 +91,33 @@ public class VolleyRequest {
 
                             }
 
-                        },
-                        new Response.ErrorListener()
-                        {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                // error
-                                if(mResultCallback != null)
-                                    try {
-                                        mResultCallback.notifySuccess("error",error.toString());
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                            }
                         }
-                ){
+                        , error -> {
+
+                    if(mResultCallback != null)
+                        try {
+                            mResultCallback.notifySuccess("error",error.toString());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    if (error == null || error.networkResponse == null) {
+                        return;
+                    }
+
+                    String body;
+                    //get status code here
+                    final String statusCode = String.valueOf(error.networkResponse.statusCode);
+                    //get response body and parse with appropriate encoding
+                    try {
+                        body = new String(error.networkResponse.data,"UTF-8");
+                        Log.d("resultInsert", "onErrorResponse: pilihan"+statusCode+" "+body);
+                    } catch (UnsupportedEncodingException e) {
+                        Log.d("resultInsert", "onErrorResponse: catch pilihan"+e.toString());
+                        // exception
+                    }
+                })
+                        {
                     @Override
                     protected Map<String, String> getParams()
                     {
